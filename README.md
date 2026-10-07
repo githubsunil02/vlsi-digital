@@ -14,3 +14,22 @@ This repository contains my digital design modules and testbenches as I transiti
 * **Description:** Generates a parity bit for input data packets to ensure data integrity during transmission.
 * **Verification Status:** Basic directed testing complete.# vlsi-digital
 Verilog designs and testbenches for digital logic modules, transitioning toward SystemVerilog and UVM verification.
+
+### 2. 2-Bit Comparator (`2-Bit_Comparator.v`)
+Type
+* **Hardware Description Language (HDL) Component**
+* **Modeling Style:** Structural / Gate-Level Modeling (built entirely using primitive gates: `not`, `and`, `or`).
+
+### Description
+This module takes two 2-bit inputs, A (A₁A₀) and B (B₁B₀), and yields three distinct single-bit binary outputs representing their relationship:
+* **Equal (A = B):** High (`1`) when both numbers match bit-for-bit.
+* **Greater (A > B):** High (`1`) when A is numerically larger than B.
+* **Less (A < B):** High (`1`) when A is numerically smaller than B.
+
+The circuit is optimized using Boolean logic derived from Karnaugh Maps (K-Maps), utilizing an internal signal E₁ to track Most Significant Bit (MSB) equality before checking Least Significant Bit (LSB) variance.
+
+### Verification Type
+* **Exhaustive Simulation (Behavioral Testbench Verification)**
+* **Mechanism:** An automated, stimulus-driven testbench (`tb_comparator_2bit`) that leverages a 4-bit concurrent concatenation loop (`{A1, A0, B1, B0} = i`).
+* **Coverage:** **100% Exhaustive Verification**, cycling systematically through all 2⁴ = 16 possible binary input combinations with dedicated propagation delays (`#10`) to print a formatted logic truth table to the simulator output.
+
