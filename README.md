@@ -4,7 +4,7 @@ This repository contains my digital design modules and testbenches as I transiti
 
 ## 🚀 Current Modules
 
-### 1. 2-to-1 Multiplexer (`2to1_MUX.v`)
+### 1. 2-to-1 & 4-to-1 Multiplexer (`2to1_MUX.v`)
 * **Type:** Combinational Logic
 * **Description:** A basic multiplexer routing one of two input lines to a single output based on a selection line.
 * **Verification Status:** Basic functional simulation complete.
