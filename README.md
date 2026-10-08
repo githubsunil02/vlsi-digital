@@ -15,7 +15,7 @@ This repository contains my digital design modules and testbenches as I transiti
 * **Verification Status:** Basic directed testing complete.# vlsi-digital
 Verilog designs and testbenches for digital logic modules, transitioning toward SystemVerilog and UVM verification.
 
-### 2. 2-Bit Comparator (`2-Bit_Comparator.v`)
+### 3. 2-Bit Comparator (`2-Bit_Comparator.v`)
 Type
 * **Hardware Description Language (HDL) Component**
 * **Modeling Style:** Structural / Gate-Level Modeling (built entirely using primitive gates: `not`, `and`, `or`).
@@ -33,3 +33,29 @@ The circuit is optimized using Boolean logic derived from Karnaugh Maps (K-Maps)
 * **Mechanism:** An automated, stimulus-driven testbench (`tb_comparator_2bit`) that leverages a 4-bit concurrent concatenation loop (`{A1, A0, B1, B0} = i`).
 * **Coverage:** **100% Exhaustive Verification**, cycling systematically through all 2⁴ = 16 possible binary input combinations with dedicated propagation delays (`#10`) to print a formatted logic truth table to the simulator output.
 
+### 4. Parameterized ALU Design – Verilog
+* **Designed a parameterized ALU in Verilog supporting four operations:
+
+    00 → Addition
+    01 → Subtraction
+    10 → AND
+    11 → OR
+  
+# Status Flags
+
+The ALU generates four status flags based on the operation result:
+
+OF – Overflow Flag: Indicates signed arithmetic overflow.
+ZF – Zero Flag: Set when the result is zero.
+SF – Sign Flag: Indicates the sign of the result using the MSB.
+PF – Parity Flag: Set when the result contains an even number of 1s.
+# Inputs
+A – First operand (parameterized width)
+B – Second operand (parameterized width)
+opcode – 2-bit operation selector
+# Outputs
+C – ALU result (parameterized width)
+OF – Overflow Flag
+ZF – Zero Flag
+SF – Sign Flag
+PF – Parity Flag
