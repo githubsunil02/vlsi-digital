@@ -33,7 +33,7 @@ The circuit is optimized using Boolean logic derived from Karnaugh Maps (K-Maps)
 * **Mechanism:** An automated, stimulus-driven testbench (`tb_comparator_2bit`) that leverages a 4-bit concurrent concatenation loop (`{A1, A0, B1, B0} = i`).
 * **Coverage:** **100% Exhaustive Verification**, cycling systematically through all 2⁴ = 16 possible binary input combinations with dedicated propagation delays (`#10`) to print a formatted logic truth table to the simulator output.
 
-### 4. Parameterized ALU Design – Verilog
+### 4. Parameterized ALU Design – Verilog ( Design_ALU_Basic_Operation.sv)
 * **Designed a parameterized ALU in Verilog supporting four operations:
 
     00 → Addition
@@ -41,7 +41,7 @@ The circuit is optimized using Boolean logic derived from Karnaugh Maps (K-Maps)
     10 → AND
     11 → OR
   
-# Status Flags
+* **Status Flags
 
 The ALU generates four status flags based on the operation result:
 
@@ -49,11 +49,11 @@ OF – Overflow Flag: Indicates signed arithmetic overflow.
 ZF – Zero Flag: Set when the result is zero.
 SF – Sign Flag: Indicates the sign of the result using the MSB.
 PF – Parity Flag: Set when the result contains an even number of 1s.
-# Inputs
+* **Inputs
 A – First operand (parameterized width)
 B – Second operand (parameterized width)
 opcode – 2-bit operation selector
-# Outputs
+* **Outputs
 C – ALU result (parameterized width)
 OF – Overflow Flag
 ZF – Zero Flag
