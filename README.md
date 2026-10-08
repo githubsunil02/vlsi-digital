@@ -59,3 +59,24 @@ OF – Overflow Flag
 ZF – Zero Flag
 SF – Sign Flag
 PF – Parity Flag
+
+
+### 5. Create a 4-to-16 line decoder using Structural modeling. Implement it by connecting multiple 2-to-4 decoders.
+
+### Code Flow — 4-to-16 Decoder
+Input: 4-bit input A[3:0].
+First Decoder (D0): Takes A[3:2] and generates 4 enable signals EN[3:0].
+Group Selection: Only one EN signal becomes 1 based on A[3:2].
+Second-Level Decoders (D1–D4): All receive A[1:0].
+Enable: Only the decoder whose EN is 1 becomes active.
+Output: That decoder selects one output out of its 4 outputs.
+Final Result: One of the 16 outputs Y[15:0] becomes 1, while all others remain 0.
+Testbench: A is tested from 0000 to 1111 to verify all 16 combinations.
+
+Simple flow:
+
+A[3:2] → D0 → EN[3:0] → Select Decoder → A[1:0] → Y[15:0]
+
+Example:
+
+A = 1010 → A[3:2] = 10 → Select D3 → A[1:0] = 10 → Y10 = 1.
