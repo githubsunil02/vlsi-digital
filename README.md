@@ -80,3 +80,23 @@ A[3:2] → D0 → EN[3:0] → Select Decoder → A[1:0] → Y[15:0]
 Example:
 
 A = 1010 → A[3:2] = 10 → Select D3 → A[1:0] = 10 → Y10 = 1.
+
+
+### 6. Priority Encoder Using Verilog
+     ## Description
+
+Designed a 16:4 Priority Encoder using Behavioral Modeling in Verilog. It converts 16 input lines into a 4-bit binary output based on priority.
+
+Inputs: 16-bit D[15:0]
+Outputs: 4-bit Y[3:0] and valid
+Priority: D[15] has the highest priority, and D[0] has the lowest.
+Modeling: Behavioral Modeling using always, for, and if statements.
+
+## Working (Step-by-Step)
+1. Initialize Y = 0000 and valid = 0.
+2. Start checking inputs from D[15] down to D[0].
+3. If D[i] = 1 and valid = 0, store the input index i in Y.
+4. Set valid = 1 after finding the first active input.
+5. Ignore all lower-priority inputs because valid is already 1.
+6. If all inputs are 0, Y = 0000 and valid = 0.
+7. The testbench verifies all 65,536 input combinations.
